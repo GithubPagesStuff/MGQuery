@@ -13,7 +13,7 @@
 id (*MGCopyAnswer)(NSString *question);
 
 const char *MGQueryAnswer (char *Question) {
-{
+
     void *mgdylib = dlopen("/usr/lib/libMobileGestalt.dylib", RTLD_LAZY);
     MGCopyAnswer = dlsym(mgdylib, "MGCopyAnswer");
     NSString *q = [[NSString alloc] initWithCString:Question encoding:NSUTF8StringEncoding];
@@ -100,3 +100,4 @@ NSString *ian2 = [[NSString alloc] initWithString:@"false"];
         return(out);
 
 }
+@end
