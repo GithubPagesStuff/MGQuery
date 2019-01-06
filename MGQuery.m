@@ -97,6 +97,10 @@ NSString *ian2 = [[NSString alloc] initWithString:@"false"];
     }
     out = [outputstring cStringUsingEncoding:NSUTF8StringEncoding];
     }
+
+	if (out == null) {
+	out =  object_getClassName(answer);
+}
         return(out);
 
 }
