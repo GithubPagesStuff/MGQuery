@@ -31,7 +31,9 @@ const char *MGQueryAnswer (char *Question) {
 
         out = [answer cStringUsingEncoding:NSUTF8StringEncoding];
     }
-    
+	if (strcmp(object_getClassName(answer), "NSTaggedPointerString")==0) {
+		out = [answer cStringUsingEncoding:NSUTF8StringEncoding];	
+	}    
     if (strcmp(object_getClassName(answer), "__NSCFBoolean")==0)
     {
       //  printf("b00l");
